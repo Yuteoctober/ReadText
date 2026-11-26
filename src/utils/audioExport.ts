@@ -129,7 +129,7 @@ function loadLame(): Promise<LameNS | null> {
       return
     }
     const s = document.createElement('script')
-    s.src = '/lame.min.js'
+    s.src = `${import.meta.env.BASE_URL}lame.min.js`
     s.async = true
     s.onload = () => resolve(w.lamejs ?? null)
     s.onerror = () => resolve(null)
